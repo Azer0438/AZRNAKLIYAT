@@ -3,7 +3,7 @@ export const contactInfo = {
   whatsappDisplay: "0544 955 04 38",
   callRaw: "905449550438",
   callDisplay: "0544 955 04 38",
-  email: "info@azrevdenevenakliyat.com",
+  email: "azerbarbaros38@gmail.com",
   address: "Kayseri / Merkez"
 };
 
@@ -19,7 +19,7 @@ export const contactMeta = {
 
 export const siteMeta = {
   brandName: "AZR Evden Eve Nakliyat",
-  siteUrl: "https://azrevdenevenakliyat.com",
+  siteUrl: "https://azrevdenevenakliyat.com.tr",
   logoPath: "/images/azr-logo.png",
   defaultSocialImagePath: "/images/azr-og-image.png",
   contentUpdatedAt: "2026-04-23"
