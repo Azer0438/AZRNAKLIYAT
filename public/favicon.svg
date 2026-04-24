@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#024d4f" />
+  <path
+    d="M14 26 L32 15 L50 26"
+    fill="none"
+    stroke="#c7963b"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="5.5"
+  />
+  <text
+    x="31.5"
+    y="37"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="24"
+    font-weight="700"
+    fill="#f8fbfa"
+  >
+    A
+  </text>
+  <path
+    d="M39 31 L46 35 L39 49"
+    fill="#c7963b"
+    stroke="#c7963b"
+    stroke-linejoin="round"
+    stroke-width="1"
+  />
+</svg>
