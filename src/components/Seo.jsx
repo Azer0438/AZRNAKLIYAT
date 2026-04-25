@@ -58,7 +58,7 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
     const siteUrl = siteMeta.siteUrl;
     const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
     const resolvedImage = resolveImageUrl(siteUrl, image);
-    const robotsContent = noIndex ? "noindex, nofollow" : "";
+    const robotsContent = noIndex ? "noindex, nofollow" : "index, follow";
     const previousTitle = document.title;
     const previousDescription = document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
     const previousCanonical = document.head.querySelector('link[rel="canonical"]')?.getAttribute("href") || "";
@@ -92,6 +92,8 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
 
     document.title = title;
     ensureMeta('meta[name="description"]', "content", description);
+    ensureMeta('meta[name="author"]', "content", siteMeta.brandName);
+    ensureMeta('meta[name="publisher"]', "content", siteMeta.brandName);
 
     ensureCanonical(canonicalUrl);
     ensureOrRemoveRobots(robotsContent);

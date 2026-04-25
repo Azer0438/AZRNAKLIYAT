@@ -1,1 +1,2 @@
-/* /index.html 200
+# Vercel serves generated static route files and dist/404.html.
+# Do not add a catch-all 200 rewrite here; unknown URLs should return 404.

@@ -19,8 +19,60 @@ const blogCoverImages = [
   "/images/blog-kapak-5.webp"
 ];
 
+const fallbackLinks = [
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/hizmetler", label: "Hizmetler" },
+  { href: "/bolgeler", label: "Hizmet Bölgeleri" },
+  { href: "/sehirler", label: "Şehirlerarası Nakliyat" },
+  { href: "/blog", label: "Blog" }
+];
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function jsonLdTag(jsonLd) {
   return `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+}
+
+function getFallbackTitle(meta) {
+  if (meta.h1) {
+    return meta.h1;
+  }
+
+  const titleParts = meta.title.split("|").map((part) => part.trim()).filter(Boolean);
+  if (titleParts[0] === siteMeta.brandName && titleParts[1]) {
+    return `${titleParts[0]} ${titleParts[1]}`;
+  }
+
+  return titleParts[0] || meta.title;
+}
+
+function buildStaticFallback(meta) {
+  const title = escapeHtml(getFallbackTitle(meta));
+  const description = escapeHtml(meta.description);
+  const sectionTitle = meta.noIndex ? "Doğru sayfaya yönlenin" : "Kayseri nakliyat hizmetleri";
+  const sectionCopy = meta.noIndex
+    ? "Aradığınız sayfa taşınmış veya kaldırılmış olabilir. Ana sayfa, hizmetler ve iletişim bağlantıları üzerinden doğru sayfaya ulaşabilirsiniz."
+    : "Kayseri evden eve nakliyat, asansörlü nakliyat, şehirlerarası nakliyat, ofis taşıma, paketleme ve eşya depolama süreçlerinde planlı ve iletişimi güçlü bir taşıma akışı sunuyoruz.";
+  const links = fallbackLinks.map((link) => `<a href="${link.href}">${link.label}</a>`).join("\n          ");
+
+  return `      <main class="seo-fallback" aria-label="${escapeHtml(siteMeta.brandName)}">
+        <section>
+          <p>AZR Evden Eve Nakliyat</p>
+          <h1>${title}</h1>
+          <p>${description}</p>
+          <h2>${escapeHtml(sectionTitle)}</h2>
+          <p>${escapeHtml(sectionCopy)}</p>
+          <nav aria-label="Öne çıkan sayfalar">
+          ${links}
+          </nav>
+        </section>
+      </main>`;
 }
 
 function buildHead(meta) {
@@ -28,26 +80,25 @@ function buildHead(meta) {
   const imagePath = meta.image || siteMeta.defaultSocialImagePath;
   const imageUrl = imagePath ? `${siteUrl}${imagePath}` : "";
   const tags = [
-    `<link rel="canonical" href="${canonicalUrl}" />`,
-    `<meta property="og:title" content="${meta.title}" />`,
-    `<meta property="og:description" content="${meta.description}" />`,
-    `<meta property="og:url" content="${canonicalUrl}" />`,
+    `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />`,
+    `<meta name="author" content="${escapeHtml(siteMeta.brandName)}" />`,
+    `<meta name="publisher" content="${escapeHtml(siteMeta.brandName)}" />`,
+    `<meta name="robots" content="${meta.noIndex ? "noindex, nofollow" : "index, follow"}" />`,
+    `<meta property="og:title" content="${escapeHtml(meta.title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
+    `<meta property="og:url" content="${escapeHtml(canonicalUrl)}" />`,
     `<meta property="og:type" content="${meta.ogType || "website"}" />`,
-    `<meta property="og:site_name" content="${siteMeta.brandName}" />`,
-    `<meta name="twitter:title" content="${meta.title}" />`,
-    `<meta name="twitter:description" content="${meta.description}" />`,
+    `<meta property="og:site_name" content="${escapeHtml(siteMeta.brandName)}" />`,
+    `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`
   ];
 
-  if (meta.noIndex) {
-    tags.push(`<meta name="robots" content="noindex, nofollow" />`);
-  }
-
   if (imageUrl) {
-    tags.push(`<meta property="og:image" content="${imageUrl}" />`);
+    tags.push(`<meta property="og:image" content="${escapeHtml(imageUrl)}" />`);
     tags.push(`<meta property="og:image:width" content="1200" />`);
     tags.push(`<meta property="og:image:height" content="630" />`);
-    tags.push(`<meta name="twitter:image" content="${imageUrl}" />`);
+    tags.push(`<meta name="twitter:image" content="${escapeHtml(imageUrl)}" />`);
   }
 
   if (meta.jsonLd) {
@@ -59,13 +110,21 @@ function buildHead(meta) {
 }
 
 function injectMeta(template, meta) {
-  const htmlWithTitle = template.replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`);
+  const htmlWithTitle = template.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(meta.title)}</title>`);
   const htmlWithDescription = htmlWithTitle.replace(
     /<meta\s+name="description"\s+content="[\s\S]*?"\s*\/>/,
-    `<meta name="description" content="${meta.description}" />`
+    `<meta name="description" content="${escapeHtml(meta.description)}" />`
+  );
+  const htmlWithoutBaseMeta = htmlWithDescription
+    .replace(/\s*<meta\s+name="author"\s+content="[\s\S]*?"\s*\/>/g, "")
+    .replace(/\s*<meta\s+name="publisher"\s+content="[\s\S]*?"\s*\/>/g, "")
+    .replace(/\s*<meta\s+name="robots"\s+content="[\s\S]*?"\s*\/>/g, "");
+  const htmlWithFallback = htmlWithoutBaseMeta.replace(
+    /<div id="root">[\s\S]*?<\/div>/,
+    `<div id="root">\n${buildStaticFallback(meta)}\n    </div>`
   );
 
-  return htmlWithDescription.replace("</head>", `    ${buildHead(meta)}\n  </head>`);
+  return htmlWithFallback.replace("</head>", `    ${buildHead(meta)}\n  </head>`);
 }
 
 function writeRouteHtml(template, meta) {
