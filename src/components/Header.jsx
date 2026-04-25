@@ -1,4 +1,3 @@
-import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { siteMeta } from "../data/sharedSiteData.js";
 
@@ -14,7 +13,7 @@ export default function Header({ sectionLinks, pageLinks, mobileMenuOpen, onTogg
       <header className={`site-header${scrolled ? " scrolled" : ""}`} id="top">
         <Link to="/" className="brand" aria-label="AZR Evden Eve Nakliyat ana sayfa">
           <span className="brand-mark image-brand-mark">
-            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" />
+            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" width="104" height="68" fetchPriority="high" decoding="async" />
           </span>
           <span className="brand-text">
             <span className="brand-title">AZR Evden Eve Nakliyat</span>
@@ -46,7 +45,7 @@ export default function Header({ sectionLinks, pageLinks, mobileMenuOpen, onTogg
           aria-label="Menüyü aç"
           onClick={onToggleMenu}
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          <span aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
         </button>
       </header>
 

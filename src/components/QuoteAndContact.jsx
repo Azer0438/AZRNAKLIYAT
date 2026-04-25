@@ -13,7 +13,7 @@ export function QuoteSection({ onDetailSubmit }) {
             ekip planını birlikte oluşturalım.
           </p>
           <div className="quote-brand-seal">
-            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" />
+            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" width="140" height="92" loading="lazy" decoding="async" />
             <div className="quote-brand-copy">
               <strong>AZR Plan Notu</strong>
               <p>İlk görüşmede yalnızca fiyat vermek yerine sahadaki gerçek ihtiyacı çıkarıyoruz.</p>
@@ -148,7 +148,7 @@ export function ContactSection({ contactInfo, contactMeta, footerServiceAreas })
             hemen ulaşabilirsiniz.
           </p>
           <div className="contact-brand-card">
-            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" />
+            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" width="140" height="92" loading="lazy" decoding="async" />
             <div>
               <strong>Taşıma değil, operasyon kurguluyoruz</strong>
               <p>Kayseri merkez, ilçeler ve şehirlerarası hatlarda tek hat üzerinden ilerleyen bir planlama akışı sunuyoruz.</p>

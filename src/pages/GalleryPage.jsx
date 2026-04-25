@@ -33,7 +33,7 @@ export default function GalleryPage({ galleryItems }) {
       <section className="section-block">
         <div className="section-shell">
           <div className="gallery-lead-card reveal">
-            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" className="gallery-lead-logo" />
+            <img src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" className="gallery-lead-logo" width="280" height="184" loading="lazy" decoding="async" />
             <div className="gallery-lead-copy">
               <span className="preview-tag">AZR Seçkisi</span>
               <h2>Her karede aynı şeyi arıyoruz: düzen, koruma ve net akış</h2>

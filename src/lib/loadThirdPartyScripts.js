@@ -52,11 +52,18 @@ export function scheduleThirdPartyScripts() {
   };
 
   const schedule = () => {
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(loadAll, { timeout: 4000 });
-      return;
-    }
-    window.setTimeout(loadAll, 2500);
+    const delayedLoad = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadAll, { timeout: 8000 });
+        return;
+      }
+      loadAll();
+    };
+
+    window.setTimeout(delayedLoad, 12000);
+    ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+      window.addEventListener(eventName, loadAll, { once: true, passive: true });
+    });
   };
 
   if (document.readyState === "complete") {

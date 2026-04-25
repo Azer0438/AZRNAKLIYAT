@@ -35,7 +35,7 @@ export default function Footer({ sectionLinks, pageLinks, contactInfo, contactMe
       <footer className="site-footer">
         <div className="section-shell footer-layout">
           <div className="footer-column">
-            <img className="footer-logo" src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" />
+            <img className="footer-logo" src={siteMeta.logoPath} alt="AZR Evden Eve Nakliyat logosu" width="280" height="184" loading="lazy" decoding="async" />
             <span className="footer-kicker">Kayseri'den çıkan düzenli taşıma operasyonları</span>
             <div className="footer-brand">AZR Evden Eve Nakliyat</div>
             <p className="footer-text">

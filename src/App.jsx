@@ -80,17 +80,14 @@ function AppShell() {
       });
     };
 
-    const domObserver = new MutationObserver(() => {
-      attachRevealObservers();
-    });
-
-    attachRevealObservers();
-    domObserver.observe(document.body, { childList: true, subtree: true });
+    const frame = window.requestAnimationFrame(attachRevealObservers);
+    const latePass = window.setTimeout(attachRevealObservers, 250);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      domObserver.disconnect();
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(latePass);
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
     };

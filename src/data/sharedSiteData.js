@@ -20,7 +20,7 @@ export const contactMeta = {
 export const siteMeta = {
   brandName: "AZR Evden Eve Nakliyat",
   siteUrl: "https://azrevdenevenakliyat.com.tr",
-  logoPath: "/images/azr-logo.png",
+  logoPath: "/images/azr-logo.webp",
   defaultSocialImagePath: "/images/azr-og-image.png",
   contentUpdatedAt: "2026-04-23"
 };
