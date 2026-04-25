@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azrevdenevenakliyat.com/sitemap.xml
+Sitemap: https://azrevdenevenakliyat.com.tr/sitemap.xml

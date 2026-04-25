@@ -41,7 +41,7 @@ function ensureOrRemoveRobots(content) {
 
 export default function Seo({ title, description, path = "/", image, jsonLd, noIndex = false }) {
   useEffect(() => {
-    const siteUrl = "https://azrevdenevenakliyat.com";
+    const siteUrl = siteMeta.siteUrl;
     const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
     const resolvedImage = image || `${siteUrl}${siteMeta.defaultSocialImagePath}`;
     const robotsContent = noIndex ? "noindex, nofollow" : "";
