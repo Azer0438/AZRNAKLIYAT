@@ -4,7 +4,7 @@ export default function Hero({ contactInfo, onHeroSubmit }) {
       <div className="hero-shell">
         <div className="hero-copy">
           <p className="eyebrow reveal">Kayseri merkezli planlı taşıma ekibi</p>
-          <h1 className="reveal">Taşınma gününü karmaşadan çıkarıp net bir plana dönüştürüyoruz.</h1>
+          <h1 className="reveal">Taşınmayı plana dönüştürüyoruz.</h1>
           <p className="hero-text reveal">
             AZR Evden Eve Nakliyat; ev, ofis ve şehirlerarası taşımalarda yalnızca araç gönderen bir ekip değil, süreci baştan sona organize eden
             bir operasyon partneridir. Kat durumu, bina erişimi, paketleme kapsamı ve teslim sırası en baştan netleşir; taşınma günü daha

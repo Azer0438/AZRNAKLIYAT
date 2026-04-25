@@ -188,7 +188,7 @@ const routes = [
   {
     path: "/sehirler",
     title: "Şehirlerarası Nakliyat Sayfaları | AZR Evden Eve Nakliyat",
-    description: "Farklı şehir hatları için hazırlanan SEO odaklı içeriklerde rota bazlı taşınma ihtiyaçlarını inceleyin.",
+    description: "Farklı şehir hatları için hazırlanan rota sayfalarında taşınma ihtiyaçlarını daha net inceleyin.",
     jsonLd: createBreadcrumbSchema([
       { name: "Ana Sayfa", path: "/" },
       { name: "Şehirlerarası", path: "/sehirler" }

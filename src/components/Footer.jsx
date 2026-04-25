@@ -88,6 +88,18 @@ export default function Footer({ sectionLinks, pageLinks, contactInfo, contactMe
             </a>
           </div>
         </div>
+        <div className="section-shell footer-credit">
+          <div className="footer-credit-inner">
+            <span>© 2026 AZR Evden Eve Nakliyat. Tüm hakları saklıdır.</span>
+            <a className="software-credit" href="https://barbarossoft.com.tr/" target="_blank" rel="noreferrer" aria-label="BarbarosSoft web sitesine git">
+              <span className="software-credit-code" aria-hidden="true">
+                &lt;/&gt;
+              </span>
+              <span>Software:</span>
+              <span className="software-credit-badge">BarbarosSoft</span>
+            </a>
+          </div>
+        </div>
       </footer>
 
       <div className="floating-cta-stack" aria-label="Hızlı iletişim kısayolları">

@@ -92,18 +92,18 @@ export default function HomePage({
         linkLabel={{ to: "/blog", text: "Tüm Blog Yazıları" }}
       />
       <PreviewSection
-        title="Kayseri ilçelerine özel hizmet sayfaları"
-        description="İlçe ve hizmet türüne göre hazırlanmış SEO odaklı sayfalarda bölgesel taşıma ihtiyaçlarını daha net inceleyin."
+        title="Kayseri ilçelerine özel taşıma rehberleri"
+        description="İlçe ve hizmet türüne göre hazırlanmış sayfalarda bölgesel taşıma ihtiyaçlarını daha net inceleyin."
         items={seoPages}
         linkBase="/bolgeler"
         linkLabel={{ to: "/bolgeler", text: "Tüm Hizmet Bölgeleri" }}
       />
       <PreviewSection
-        title="Şehirlerarası hatlara özel SEO sayfaları"
+        title="Şehirlerarası rota rehberleri"
         description="Kayseri dışı şehirler için hazırlanan nakliyat sayfalarında rota bazlı ihtiyaçları inceleyin."
         items={citySeoPages}
         linkBase="/sehirler"
-        linkLabel={{ to: "/sehirler", text: "Tüm Şehirlerarası Sayfalar" }}
+        linkLabel={{ to: "/sehirler", text: "Tüm Şehirlerarası Rotalar" }}
       />
       <FaqSection faqs={faqs} />
       <QuoteSection onDetailSubmit={onDetailSubmit} />

@@ -78,6 +78,10 @@ body {
   font-weight: 800;
 }
 
+.js .seo-fallback {
+  display: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -312,6 +316,7 @@ textarea {
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
+  min-width: 0;
   box-shadow: var(--shadow);
 }
 
@@ -348,8 +353,10 @@ textarea {
 }
 
 .hero-copy h1 {
-  font-size: clamp(3rem, 8vw, 6.2rem);
-  max-width: 10ch;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  max-width: 12ch;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero-text,
@@ -367,7 +374,7 @@ textarea {
 
 .hero-text {
   color: rgba(255, 255, 255, 0.8);
-  max-width: 62ch;
+  max-width: min(62ch, 100%);
 }
 
 .hero-actions {
@@ -431,15 +438,18 @@ textarea {
 
 .hero-contact-strip a,
 .hero-contact-strip span {
+  max-width: 100%;
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.86);
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .hero-points li {
+  max-width: 100%;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
@@ -480,6 +490,7 @@ textarea {
   border: 1px solid rgba(15, 123, 120, 0.12);
   border-radius: var(--radius-lg);
   padding: 32px;
+  min-width: 0;
   box-shadow: var(--shadow);
 }
 
@@ -1130,7 +1141,7 @@ textarea {
 }
 
 .site-footer {
-  padding: 28px 5% 120px;
+  padding: 28px 5% 0;
   background:
     radial-gradient(circle at top left, rgba(199, 150, 59, 0.12), transparent 22%),
     linear-gradient(180deg, #0d191b 0%, #101718 100%);
@@ -1203,6 +1214,45 @@ textarea {
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.92rem;
   line-height: 1.7;
+}
+
+.footer-credit {
+  margin-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px 0;
+}
+
+.footer-credit-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.software-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+}
+
+.software-credit-code {
+  font-weight: 900;
+  color: #f59f21;
+}
+
+.software-credit-badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: #f59f21;
+  color: #102127;
+  font-weight: 900;
 }
 
 .floating-cta-stack {
@@ -1359,7 +1409,7 @@ textarea {
   }
 
   .hero-copy h1 {
-    max-width: none;
+    max-width: 100%;
   }
 
   .trust-grid,
@@ -1384,8 +1434,8 @@ textarea {
     display: grid;
   }
 
-  .site-footer {
-    padding-bottom: 120px;
+  .footer-credit {
+    padding-bottom: 108px;
   }
 
   .floating-cta-stack {
@@ -1407,7 +1457,20 @@ textarea {
   }
 
   .hero-copy h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 7.4vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .hero-actions .btn,
+  .hero-contact-strip a,
+  .hero-contact-strip span,
+  .hero-points li {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .section-title,
@@ -1429,5 +1492,10 @@ textarea {
     right: 14px;
     bottom: 152px;
     max-width: none;
+  }
+
+  .footer-credit-inner {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

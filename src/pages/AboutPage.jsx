@@ -48,8 +48,8 @@ export default function AboutPage() {
           <article className="detail-card reveal">
             <h2>Neden bu sayfa önemli?</h2>
             <p>
-              Kurumsal güven sinyalleri yalnızca arama motorları için değil, ziyaretçi için de önemlidir. Bu sayfa; markanın nasıl çalıştığını,
-              hangi hizmet yaklaşımını benimsediğini ve neden farklılaştığını açık biçimde anlatmak için hazırlandı.
+              Kurumsal güven yalnızca vaatle değil, açık çalışma düzeniyle oluşur. Bu sayfa; markanın nasıl çalıştığını, hangi hizmet yaklaşımını
+              benimsediğini ve neden farklılaştığını açık biçimde anlatmak için hazırlandı.
             </p>
           </article>
           <article className="detail-card reveal">

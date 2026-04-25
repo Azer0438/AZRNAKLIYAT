@@ -129,7 +129,7 @@ export function LocalSeoSection({ blocks, badges }) {
           <p className="eyebrow reveal">Kayseri Odaklı Hizmet</p>
           <h2 className="section-title local-seo-title reveal">Kayseri'yi bilen planlı taşıma yapısı</h2>
           <p className="section-text reveal">
-            Site yapısı hem kullanıcıya doğru hizmet sayfasını gösteriyor hem de arama motorlarına hizmet bölgelerini ve hizmet türlerini daha açık anlatıyor.
+            Hizmet sayfaları, ziyaretçinin bulunduğu ilçe veya taşınma senaryosuna göre doğru bilgiye daha hızlı ulaşmasını sağlar.
           </p>
           <div className="badge-cloud local-seo-badges reveal">
             {badges.map((item) => (
