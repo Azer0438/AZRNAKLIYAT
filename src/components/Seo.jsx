@@ -1,6 +1,18 @@
 import { useEffect } from "react";
 import { siteMeta } from "../data/sharedSiteData.js";
 
+function resolveImageUrl(siteUrl, image) {
+  if (!image) {
+    return `${siteUrl}${siteMeta.defaultSocialImagePath}`;
+  }
+
+  if (/^https?:\/\//i.test(image)) {
+    return image;
+  }
+
+  return `${siteUrl}${image.startsWith("/") ? "" : "/"}${image}`;
+}
+
 function ensureMeta(selector, attribute, value) {
   let element = document.head.querySelector(selector);
   if (!element) {
@@ -40,10 +52,12 @@ function ensureOrRemoveRobots(content) {
 }
 
 export default function Seo({ title, description, path = "/", image, jsonLd, noIndex = false }) {
+  const jsonLdText = jsonLd ? JSON.stringify(jsonLd) : "";
+
   useEffect(() => {
     const siteUrl = siteMeta.siteUrl;
     const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
-    const resolvedImage = image || `${siteUrl}${siteMeta.defaultSocialImagePath}`;
+    const resolvedImage = resolveImageUrl(siteUrl, image);
     const robotsContent = noIndex ? "noindex, nofollow" : "";
     const previousTitle = document.title;
     const previousDescription = document.querySelector('meta[name="description"]')?.getAttribute("content") || "";
@@ -58,6 +72,23 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
     const previousOgImage = document.head.querySelector('meta[property="og:image"]')?.getAttribute("content") || "";
     const previousTwitterImage = document.head.querySelector('meta[name="twitter:image"]')?.getAttribute("content") || "";
     let structuredDataScript = null;
+    const headAlreadyCurrent =
+      previousTitle === title &&
+      previousDescription === description &&
+      previousCanonical === canonicalUrl &&
+      previousRobots === robotsContent &&
+      previousOgTitle === title &&
+      previousOgDescription === description &&
+      previousOgUrl === canonicalUrl &&
+      previousTwitterTitle === title &&
+      previousTwitterDescription === description &&
+      previousTwitterCard === "summary_large_image" &&
+      previousOgImage === resolvedImage &&
+      previousTwitterImage === resolvedImage;
+
+    if (headAlreadyCurrent) {
+      return undefined;
+    }
 
     document.title = title;
     ensureMeta('meta[name="description"]', "content", description);
@@ -74,10 +105,10 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
     ensureMeta('meta[property="og:image"]', "content", resolvedImage);
     ensureMeta('meta[name="twitter:image"]', "content", resolvedImage);
 
-    if (jsonLd) {
+    if (jsonLdText) {
       structuredDataScript = document.createElement("script");
       structuredDataScript.type = "application/ld+json";
-      structuredDataScript.text = JSON.stringify(jsonLd);
+      structuredDataScript.text = jsonLdText;
       structuredDataScript.setAttribute("data-seo-jsonld", "true");
       document.head.appendChild(structuredDataScript);
     }
@@ -99,7 +130,7 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
         structuredDataScript.remove();
       }
     };
-  }, [title, description, path, image, jsonLd, noIndex]);
+  }, [title, description, path, image, jsonLdText, noIndex]);
 
   return null;
 }

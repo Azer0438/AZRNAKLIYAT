@@ -60,7 +60,7 @@ export function scheduleThirdPartyScripts() {
       loadAll();
     };
 
-    window.setTimeout(delayedLoad, 12000);
+    window.setTimeout(delayedLoad, 30000);
     ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
       window.addEventListener(eventName, loadAll, { once: true, passive: true });
     });

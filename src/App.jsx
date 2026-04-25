@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ScrollManager from "./components/ScrollManager";
 import { contactInfo, contactMeta, footerServiceAreas, pageLinks, sectionLinks } from "./data/sharedSiteData";
+import HomeRoute from "./routes/HomeRoute";
 
-const HomeRoute = lazy(() => import("./routes/HomeRoute"));
 const ServicesRoute = lazy(() => import("./routes/ServicesRoute"));
 const ServiceDetailRoute = lazy(() => import("./routes/ServiceDetailRoute"));
 const GalleryRoute = lazy(() => import("./routes/GalleryRoute"));
@@ -47,7 +47,8 @@ function AppShell() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 16);
+      const nextScrolled = window.scrollY > 16;
+      setScrolled((current) => (current === nextScrolled ? current : nextScrolled));
     };
 
     const markVisible = (element) => {
@@ -70,12 +71,6 @@ function AppShell() {
       const revealElements = document.querySelectorAll(".reveal:not(.visible)");
 
       revealElements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.92) {
-          markVisible(element);
-          return;
-        }
-
         observer.observe(element);
       });
     };
@@ -83,7 +78,7 @@ function AppShell() {
     const frame = window.requestAnimationFrame(attachRevealObservers);
     const latePass = window.setTimeout(attachRevealObservers, 250);
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.cancelAnimationFrame(frame);

@@ -1247,6 +1247,12 @@ textarea {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
+.hero-section .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
