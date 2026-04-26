@@ -2,7 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import ResponsiveImage from "../components/ResponsiveImage";
 import Seo from "../components/Seo";
-import { createBlogPostingSchema, createBreadcrumbSchema } from "../lib/seoSchemas";
+import { createBlogPostingSchema, createBreadcrumbSchema, createFaqSchema } from "../lib/seoSchemas";
 
 const blogCoverImages = [
   "/images/blog-kapak-1.webp",
@@ -94,8 +94,9 @@ export default function BlogPostPage({ blogPosts, services, seoPages, citySeoPag
             post,
             path: `/blog/${post.slug}`,
             image: coverImage
-          })
-        ]}
+          }),
+          post.faqs?.length ? createFaqSchema(post.faqs) : null
+        ].filter(Boolean)}
       />
       <PageHero eyebrow={post.category} title={post.title} description={post.excerpt} compact />
       <section className="section-block">
@@ -114,6 +115,19 @@ export default function BlogPostPage({ blogPosts, services, seoPages, citySeoPag
               <p>{section.text}</p>
             </article>
           ))}
+          {post.faqs?.length ? (
+            <div className="reveal">
+              <p className="eyebrow">Blog SSS</p>
+              <div className="faq-list">
+                {post.faqs.map((item) => (
+                  <details key={item.question} className="faq-item">
+                    <summary>{item.question}</summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <div className="reveal">
             <p className="eyebrow">İlgili Sayfalar</p>
             <div className="preview-grid">

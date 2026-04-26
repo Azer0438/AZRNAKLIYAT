@@ -2,7 +2,7 @@ import { siteMeta } from "./sharedSiteData.js";
 
 const blogUpdatedAt = siteMeta.contentUpdatedAt;
 
-export const blogPosts = [
+const baseBlogPosts = [
   {
     slug: "tasinma-oncesi-kontrol-listesi",
     title: "Taşınmadan 72 Saat Önce Tamamlanması Gerekenler",
@@ -422,5 +422,261 @@ export const blogPosts = [
         text: "Operasyon boyunca hangi ekipmanın hangi alandan çıktığı ve nereye yerleşeceği çok daha kolay takip edilir."
       }
     ]
+  },
+  {
+    slug: "kayseri-evden-eve-nakliyat-fiyatlari-neye-gore-degisir",
+    title: "Kayseri Evden Eve Nakliyat Fiyatları Neye Göre Değişir?",
+    category: "Fiyat Rehberi",
+    cover: {
+      label: "Kayseri Fiyat Rehberi",
+      gradient: "linear-gradient(135deg, #17343a, #0f7b78 58%, #d79a4a)"
+    },
+    date: "26 Nisan 2026",
+    publishedAt: "2026-04-26",
+    updatedAt: blogUpdatedAt,
+    readTime: "6 dk",
+    excerpt: "Kayseri evden eve nakliyat fiyatı; eşya yoğunluğu, kat bilgisi, asansör ihtiyacı, paketleme kapsamı ve mesafeye göre değişir.",
+    sections: [
+      {
+        heading: "Oda sayısı tek başına yeterli değildir",
+        text: "Kayseri evden eve nakliyat fiyatı konuşulurken yalnızca 2+1 veya 3+1 bilgisi doğru teklif için yeterli olmaz. Büyük mobilyalar, beyaz eşyalar, kırılacak ürünler, kitap kolileri ve sökülecek mobilyalar operasyon süresini doğrudan etkiler."
+      },
+      {
+        heading: "Kat, asansör ve araç yaklaşımı fiyatı etkiler",
+        text: "Talas, Melikgazi veya Kocasinan gibi bölgelerde bina yapısı ve araç park alanı farklılık gösterir. Yüksek kat, dar merdiven, bina asansörü kullanımı veya dış asansör ihtiyacı hem ekip planını hem süreyi değiştirir."
+      },
+      {
+        heading: "Paketleme kapsamı netleşmelidir",
+        text: "Sadece taşıma hizmetiyle tam paketleme hizmeti aynı fiyat aralığında değerlendirilmez. Koli, streç, battaniye, kırılacak eşya koruması ve mobilya demontajı teklifin kapsamını belirleyen ana kalemlerdir."
+      },
+      {
+        heading: "Şehir içi ve şehirlerarası taşıma ayrı planlanır",
+        text: "Kayseri içi taşımalarda mesafe daha kısa olsa da bina erişimi önemli olur. Şehirlerarası nakliyatta ise rota, yakıt, teslim tarihi, araç içi sabitleme ve uzun yol koruması fiyat üzerinde daha belirleyici hale gelir."
+      },
+      {
+        heading: "Net teklif için hangi bilgiler gerekir?",
+        text: "Başlangıç ve varış adresi, kat bilgisi, oda sayısı, eşya yoğunluğu, tarih aralığı, asansör durumu ve ek paketleme ihtiyacı paylaşıldığında daha gerçekçi bir nakliyat teklifi hazırlanabilir."
+      }
+    ]
+  },
+  {
+    slug: "talas-ev-tasirken-site-yonetimiyle-neler-konusulmali",
+    title: "Talas'ta Ev Taşırken Site Yönetimiyle Neler Konuşulmalı?",
+    category: "Talas Rehberi",
+    cover: {
+      label: "Talas Site Taşıması",
+      gradient: "linear-gradient(135deg, #203443, #45697d 58%, #d79a4a)"
+    },
+    date: "26 Nisan 2026",
+    publishedAt: "2026-04-26",
+    updatedAt: blogUpdatedAt,
+    readTime: "5 dk",
+    excerpt: "Talas'ta site içi taşınmalarda saat aralığı, asansör kullanımı, araç park alanı ve yönetim kuralları önceden netleşmelidir.",
+    sections: [
+      {
+        heading: "Taşınma saat aralığını öğrenin",
+        text: "Talas bölgesindeki birçok sitede taşınma için belirli saat aralıkları uygulanabilir. Yönetimden izin alınmadan kamyonun siteye girmesi veya eşya indirme-bindirme yapılması beklemeye neden olabilir."
+      },
+      {
+        heading: "Bina asansörü ve dış asansör uygunluğunu sorun",
+        text: "Bina asansörü kullanılacaksa koruma uygulaması, yük limiti ve rezervasyon bilgisi önceden öğrenilmelidir. Dış asansör gerekiyorsa cephe yaklaşımı, zemin durumu ve araç kurulum alanı ayrıca kontrol edilmelidir."
+      },
+      {
+        heading: "Araç park alanını önceden belirleyin",
+        text: "Kamyonun bina girişine yakın durması taşıma süresini ciddi şekilde etkiler. Talas'taki site yoğun yapılarda araç giriş kapısı, güvenlik noktası ve blok önü yaklaşımı taşınma gününden önce konuşulmalıdır."
+      },
+      {
+        heading: "Komşuluk ve ortak alan kurallarını dikkate alın",
+        text: "Ortak koridor, merdiven, zemin kaplaması ve kapı girişlerinin korunması hem site yönetimi hem komşular açısından önemlidir. Taşınma planı bu kurallara uygun kurulursa süreç daha sakin ilerler."
+      }
+    ]
+  },
+  {
+    slug: "melikgazi-ofis-tasima-sureci-nasil-planlanir",
+    title: "Melikgazi Ofis Taşıma Süreci Nasıl Planlanır?",
+    category: "Melikgazi Ofis",
+    cover: {
+      label: "Ofis Taşıma Planı",
+      gradient: "linear-gradient(135deg, #24392f, #4a7868 58%, #d79a4a)"
+    },
+    date: "26 Nisan 2026",
+    publishedAt: "2026-04-26",
+    updatedAt: blogUpdatedAt,
+    readTime: "6 dk",
+    excerpt: "Melikgazi ofis taşıma sürecinde departman sırası, elektronik ekipman güvenliği, arşiv düzeni ve kurulum planı birlikte hazırlanmalıdır.",
+    sections: [
+      {
+        heading: "Departman bazlı taşıma sırası çıkarın",
+        text: "Ofis taşımasında masa, sandalye, dolap ve arşivler rastgele taşınırsa yeni adreste kurulum uzar. Melikgazi'deki iş yerlerinde departman sırası ve yerleşim planı önceden hazırlanmalıdır."
+      },
+      {
+        heading: "Elektronik ekipmanları ayrı yönetin",
+        text: "Bilgisayar, monitör, yazıcı, modem ve ağ cihazları hassas ekipman olarak ele alınmalıdır. Kablo, adaptör ve ekipman etiketleri doğru tutulursa yeni ofiste kurulum daha hızlı tamamlanır."
+      },
+      {
+        heading: "Arşiv ve evrak düzenini bozmayın",
+        text: "Klasörlerin departman, tarih veya dolap sırasına göre etiketlenmesi ofis taşıma sonrası iş akışını korur. Evrak kolilerinin genel eşya kolileriyle karışmaması özellikle önemlidir."
+      },
+      {
+        heading: "Mesai dışı taşıma seçeneğini değerlendirin",
+        text: "İş kaybını azaltmak için taşıma hafta sonu veya mesai sonrası planlanabilir. Bu tercih bina erişimi, güvenlik görevlisi, asansör kullanımı ve ekip müsaitliğiyle birlikte değerlendirilmelidir."
+      }
+    ]
+  },
+  {
+    slug: "kocasinan-asansorlu-tasima-hangi-binalarda-avantajli",
+    title: "Kocasinan Asansörlü Taşıma Hangi Binalarda Avantajlı?",
+    category: "Kocasinan Rehberi",
+    cover: {
+      label: "Asansörlü Taşıma",
+      gradient: "linear-gradient(135deg, #163542, #3b6f81 60%, #d79a4a)"
+    },
+    date: "26 Nisan 2026",
+    publishedAt: "2026-04-26",
+    updatedAt: blogUpdatedAt,
+    readTime: "5 dk",
+    excerpt: "Kocasinan'da yüksek kat, dar merdiven, büyük mobilya ve yoğun bina trafiği olan taşınmalarda asansörlü taşıma avantaj sağlayabilir.",
+    sections: [
+      {
+        heading: "Yüksek katlarda süreyi kısaltır",
+        text: "Kocasinan bölgesindeki çok katlı yapılarda eşyayı merdivenden taşımak hem zaman alır hem de bina içi trafiği artırır. Dış asansör uygun cephede kurulabiliyorsa taşıma daha hızlı ilerler."
+      },
+      {
+        heading: "Dar merdivenli binalarda hasar riskini azaltır",
+        text: "Büyük koltuk, gardırop veya beyaz eşyanın dar dönüşlerden geçirilmesi hem eşya hem bina için risk oluşturur. Asansörlü sistem bu temas noktalarını azaltarak daha kontrollü bir taşıma sağlar."
+      },
+      {
+        heading: "Kurulum alanı mutlaka kontrol edilmelidir",
+        text: "Her binada dış asansör kurulumu mümkün olmayabilir. Cephe açıklığı, yol yaklaşımı, elektrik hattı, kaldırım ve güvenli çalışma mesafesi önceden değerlendirilmelidir."
+      },
+      {
+        heading: "Fiyatı etkileyen ana detaylar",
+        text: "Kat sayısı, kurulum süresi, eşya yoğunluğu, bina konumu ve taşımanın toplam kapsamı asansörlü taşıma fiyatını etkiler. Bu yüzden ön bilgi ne kadar net olursa teklif de o kadar gerçekçi olur."
+      }
+    ]
+  },
+  {
+    slug: "kayseri-sehirlerarasi-nakliyatta-esya-guvenligi-nasil-saglanir",
+    title: "Kayseri Şehirlerarası Nakliyatta Eşya Güvenliği Nasıl Sağlanır?",
+    category: "Şehirlerarası Rehber",
+    cover: {
+      label: "Eşya Güvenliği",
+      gradient: "linear-gradient(135deg, #15242b, #29444d 58%, #0f7b78)"
+    },
+    date: "26 Nisan 2026",
+    publishedAt: "2026-04-26",
+    updatedAt: blogUpdatedAt,
+    readTime: "6 dk",
+    excerpt: "Kayseri çıkışlı şehirlerarası nakliyatta eşya güvenliği; doğru paketleme, araç içi sabitleme, yük sırası ve teslim planıyla sağlanır.",
+    sections: [
+      {
+        heading: "Uzun yol için paketleme seviyesi artırılmalıdır",
+        text: "Şehir içi taşımalarda yeterli olan bazı paketleme yöntemleri uzun yolda zayıf kalabilir. Beyaz eşya, cam ürün, mobilya köşeleri ve elektronikler için daha dikkatli koruma gerekir."
+      },
+      {
+        heading: "Araç içi sabitleme taşımanın kalbidir",
+        text: "Kayseri'den başka şehre giden araçta eşyaların hareket etmemesi gerekir. Yük sırası, ağırlık dağılımı, sabitleme noktaları ve koruyucu ayırıcılar eşya güvenliği açısından önemlidir."
+      },
+      {
+        heading: "Teslim günü planı önceden kurulmalıdır",
+        text: "Varış adresindeki kat bilgisi, araç park alanı, bina giriş saati ve anahtar teslimi önceden konuşulursa yol sonrası bekleme azalır. Bu da hem ekip hem müşteri için daha rahat bir teslim sağlar."
+      },
+      {
+        heading: "Bilgi akışı güven duygusunu artırır",
+        text: "Yükleme, çıkış, yol ve teslim aşamalarında düzenli iletişim kurulması şehirlerarası nakliyat sürecini daha öngörülebilir hale getirir. Müşteri ne zaman ne olacağını bildiğinde süreç daha güvenli hissedilir."
+      }
+    ]
   }
 ];
+
+const seoTitleOverrides = {
+  "tasinma-oncesi-kontrol-listesi": "Kayseri'de Taşınmadan 72 Saat Önce Tamamlanması Gerekenler",
+  "asansorlu-tasima-ne-zaman-gerekli": "Kayseri'de Asansörlü Taşıma Hangi Binalarda Avantaj Sağlar?",
+  "sehirlerarasi-nakliyatta-en-sik-hatalar": "Kayseri Şehirlerarası Nakliyatta Zaman Kaybettiren 3 Hata",
+  "ofis-tasima-surecinde-kesinti-nasil-azaltilir": "Kayseri Ofis Taşıma Sürecinde İş Akışı Nasıl Korunur?",
+  "paketleme-kalitesi-neden-onemli": "Kayseri Ev Taşıma Sürecinde Doğru Paketleme Neden Önemli?",
+  "nakliyat-teklifinde-mutlaka-sorulmasi-gerekenler": "Kayseri Nakliyat Teklifi Almadan Önce Sorulması Gerekenler",
+  "yeni-eve-yerlesirken-oncelik-sirasi": "Kayseri'de Yeni Eve Geçince Önce Hangi Eşyalar Yerleşmeli?",
+  "tasinma-gununde-apartman-yonetimiyle-neler-konusulmali": "Kayseri'de Taşınma Öncesi Apartman Yönetimiyle Konuşulacaklar",
+  "beyaz-esya-tasirken-dikkat-edilmesi-gerekenler": "Kayseri Evden Eve Nakliyatta Beyaz Eşya Taşırken Dikkat Edilecekler",
+  "sehirlerarasi-tasinmada-teslim-gunu-nasil-planlanir": "Kayseri Şehirlerarası Taşınmada Teslim Günü Nasıl Planlanır?",
+  "parca-esya-tasimada-maliyet-nasil-dengelenir": "Kayseri Parça Eşya Taşımada Maliyet Nasıl Dengelenir?",
+  "tadilat-surecinde-esya-depolama-ne-zaman-mantikli": "Kayseri'de Tadilat Sürecinde Eşya Depolama Ne Zaman Mantıklı?",
+  "nakliyat-firmasi-secerken-ilk-5-kriter": "Kayseri Nakliyat Firması Seçerken Bakılması Gereken 5 Kriter",
+  "tasinma-stresini-azaltan-pratik-rutinler": "Kayseri'de Taşınma Stresini Azaltan Pratik Rutinler",
+  "ofis-tasimada-ekipman-envanteri-neden-gerekli": "Kayseri Ofis Taşımada Ekipman Envanteri Neden Gerekli?"
+};
+
+const relatedServiceBySlug = {
+  "asansorlu-tasima-ne-zaman-gerekli": "asansörlü taşıma",
+  "kocasinan-asansorlu-tasima-hangi-binalarda-avantajli": "asansörlü taşıma",
+  "ofis-tasima-surecinde-kesinti-nasil-azaltilir": "ofis taşıma",
+  "melikgazi-ofis-tasima-sureci-nasil-planlanir": "ofis taşıma",
+  "tadilat-surecinde-esya-depolama-ne-zaman-mantikli": "eşya depolama",
+  "sehirlerarasi-nakliyatta-en-sik-hatalar": "şehirlerarası nakliyat",
+  "sehirlerarasi-tasinmada-teslim-gunu-nasil-planlanir": "şehirlerarası nakliyat",
+  "kayseri-sehirlerarasi-nakliyatta-esya-guvenligi-nasil-saglanir": "şehirlerarası nakliyat",
+  "paketleme-kalitesi-neden-onemli": "paketleme ve montaj",
+  "beyaz-esya-tasirken-dikkat-edilmesi-gerekenler": "paketleme ve montaj"
+};
+
+function createBlogSeoSections(post) {
+  const service = relatedServiceBySlug[post.slug] || "evden eve nakliyat";
+
+  return [
+    {
+      heading: "Kayseri'de yerel planlama neden önemlidir?",
+      text: `${post.title} konusu Kayseri'de yalnızca genel bir taşınma tavsiyesi olarak düşünülmemelidir. İlçe, bina tipi, kat bilgisi, araç yaklaşımı ve site kuralları her taşınmada farklı sonuç verir. Talas'taki site düzeni, Melikgazi'deki iş yeri trafiği veya Kocasinan'daki yüksek katlı yapı koşulları aynı operasyon planıyla yönetilemez. Bu yüzden ${service} sürecinde yerel saha bilgisi, doğru fiyat ve sorunsuz taşıma için belirleyici hale gelir.`
+    },
+    {
+      heading: "Doğru teklif için bilgileri net paylaşın",
+      text: `${service} teklifi isterken başlangıç ve varış adresi, oda sayısı, kat durumu, bina asansörü, dış asansör ihtimali, paketleme kapsamı ve taşınma tarihi açık paylaşılmalıdır. Bu bilgiler net olduğunda hem fiyat daha gerçekçi hazırlanır hem de taşıma günü beklenmeyen ek süre, ek personel veya farklı araç ihtiyacı azalır. Kayseri nakliyat taleplerinde en sağlıklı teklif, bu detayların en başta konuşulduğu teklif olur.`
+    },
+    {
+      heading: "Taşıma günü için küçük kontrol listesi",
+      text: "Taşınma sabahı önemli belgeler, kişisel eşyalar, ilk gün kullanılacak mutfak malzemeleri ve şarj cihazları ayrı tutulmalıdır. Kırılacak ürünler, beyaz eşyalar ve sökülecek mobilyalar önceden işaretlenirse ekip daha hızlı hareket eder. Bu hazırlık, Kayseri içi taşımada zamanı kısaltır; şehirlerarası nakliyatta ise teslim gününün daha kontrollü geçmesine yardımcı olur."
+    },
+    {
+      heading: "Sık yapılan hata: sadece en düşük fiyata bakmak",
+      text: `${post.category} başlığında karar verirken yalnızca en düşük fiyatı seçmek çoğu zaman yeterli olmaz. Paketleme kalitesi, ekip deneyimi, araç uygunluğu, asansörlü taşıma seçeneği, montaj desteği ve iletişim disiplini toplam sonucu etkiler. Ucuz görünen bir teklif, kapsamı belirsizse taşıma günü ek maliyet veya zaman kaybı doğurabilir.`
+    },
+    {
+      heading: "AZR Evden Eve Nakliyat bu süreci nasıl ele alır?",
+      text: `AZR Evden Eve Nakliyat, Kayseri merkezli çalıştığı için ${service} taleplerinde önce saha şartlarını anlamaya odaklanır. Kat, oda, bina erişimi, paketleme ve teslim sırası netleştiğinde taşıma günü daha öngörülebilir hale gelir. Amaç yalnızca eşya taşımak değil; müşterinin taşınma öncesi, taşıma günü ve teslim sonrasında ne olacağını daha net görmesini sağlamaktır.`
+    },
+    {
+      heading: "Blogdan sonra hangi adım atılmalı?",
+      text: `${post.title} hakkında temel fikri edindikten sonra en doğru adım, kendi adres ve eşya durumunuzu netleştirmektir. Fotoğraf, oda bilgisi, kat durumu ve tarih aralığı paylaşıldığında Kayseri nakliyat ihtiyacınız için daha isabetli yönlendirme yapılabilir.`
+    }
+  ];
+}
+
+function createBlogFaqs(post) {
+  const service = relatedServiceBySlug[post.slug] || "evden eve nakliyat";
+
+  return [
+    {
+      question: "Kayseri'de taşınma planı kaç gün önce yapılmalı?",
+      answer:
+        "Yoğun dönemlerde en az birkaç gün önceden iletişime geçmek daha doğru olur. Kat bilgisi, eşya yoğunluğu ve tarih aralığı erken netleşirse uygun ekip ve araç planı daha rahat yapılır."
+    },
+    {
+      question: `${service} için teklif alırken hangi bilgiler gerekir?`,
+      answer:
+        "Başlangıç ve varış adresi, oda sayısı, kat bilgisi, asansör durumu, paketleme ihtiyacı, tarih aralığı ve varsa montaj veya depolama talebi teklif hazırlamak için temel bilgilerdir."
+    },
+    {
+      question: "Kayseri içi taşıma ile şehirlerarası nakliyat aynı şekilde mi planlanır?",
+      answer:
+        "Hayır. Kayseri içi taşımalarda bina erişimi ve günlük saat planı öne çıkarken, şehirlerarası nakliyatta rota, teslim penceresi, araç içi sabitleme ve uzun yol paketleme seviyesi daha kritik hale gelir."
+    }
+  ];
+}
+
+export const blogPosts = baseBlogPosts.map((post) => ({
+  ...post,
+  title: seoTitleOverrides[post.slug] || post.title,
+  readTime: post.readTime === "3 dk" || post.readTime === "4 dk" ? "6 dk" : post.readTime,
+  sections: [...post.sections, ...createBlogSeoSections(post)],
+  faqs: post.faqs || createBlogFaqs(post)
+}));
