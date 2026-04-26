@@ -35,6 +35,35 @@ export const localSeoBlocks = [
   }
 ];
 
+export const kayseriMovingGuide = {
+  eyebrow: "Kayseri Evden Eve Nakliyat",
+  title: "Kayseri'de evden eve nakliyat arayanlar için net bir taşıma planı",
+  intro:
+    "Kayseri evden eve nakliyat hizmetinde iyi sonuç, yalnızca aracın gelmesiyle değil, taşıma gününden önce yapılan doğru planla başlar. AZR Evden Eve Nakliyat olarak ev taşıma sürecinde kat bilgisi, bina girişi, asansör kullanımı, araç park alanı, paketleme ihtiyacı ve teslim sırası gibi ayrıntıları en başta konuşuyoruz.",
+  blocks: [
+    {
+      title: "Kayseri içinde ilçeye göre planlama",
+      text:
+        "Talas, Melikgazi, Kocasinan ve Kayseri merkezdeki her taşınma aynı şartlarda ilerlemez. Site kuralları, apartman yönetimi, yüksek kat, dar merdiven veya araç yaklaşım mesafesi taşıma süresini doğrudan etkiler. Bu yüzden Kayseri nakliyat taleplerinde önce adres yapısını ve eşya yoğunluğunu anlamaya odaklanıyoruz."
+    },
+    {
+      title: "Evden eve taşımada fiyat ve kapsam",
+      text:
+        "Evden eve nakliyat fiyatı; oda sayısı, eşya hacmi, kat durumu, asansörlü taşıma ihtiyacı, paketleme ve montaj desteğine göre değişir. Telefon veya WhatsApp üzerinden alınan bilgilerle taşıma kapsamını netleştirir, müşteriye sonradan sürpriz çıkarmayan daha anlaşılır bir teklif sunmaya çalışırız."
+    },
+    {
+      title: "Paketleme, montaj ve teslim sırası",
+      text:
+        "Kayseri evden eve taşımacılık sürecinde kolilerin oda bazlı ayrılması, mobilyaların koruyucu şekilde paketlenmesi ve beyaz eşyaların güvenli taşınması önemlidir. Yeni adreste hangi eşyanın önce indirileceği ve hangi odada konumlanacağı planlandığında taşınma sonrası toparlanma daha hızlı olur."
+    },
+    {
+      title: "Şehir içi ve şehirlerarası bağlantı",
+      text:
+        "Kayseri merkezli çalıştığımız için hem şehir içi ev taşıma hem de Kayseri çıkışlı şehirlerarası nakliyat işlerinde aynı planlama disiplinini uyguluyoruz. Yükleme saati, yol durumu, teslim penceresi ve iletişim akışı net olduğunda nakliyat süreci daha kontrollü ve güvenli ilerler."
+    }
+  ]
+};
+
 export const serviceAreaGroups = [
   {
     title: "Aktif hizmet bölgeleri",

@@ -59,6 +59,15 @@ function buildStaticFallback(meta) {
   const sectionCopy = meta.noIndex
     ? "Aradığınız sayfa taşınmış veya kaldırılmış olabilir. Ana sayfa, hizmetler ve iletişim bağlantıları üzerinden doğru sayfaya ulaşabilirsiniz."
     : "Kayseri evden eve nakliyat, asansörlü nakliyat, şehirlerarası nakliyat, ofis taşıma, paketleme ve eşya depolama süreçlerinde planlı ve iletişimi güçlü bir taşıma akışı sunuyoruz.";
+  const guideMarkup = meta.noIndex
+    ? ""
+    : `
+          <h2 style="font-size:28px;line-height:1.25;">Kayseri evden eve nakliyat planı</h2>
+          <p style="font-size:18px;line-height:1.7;">Kayseri evden eve nakliyat arayan müşteriler için doğru teklif; adres, kat bilgisi, eşya yoğunluğu, bina girişi, asansör kullanımı ve paketleme ihtiyacı birlikte değerlendirildiğinde netleşir. Talas, Melikgazi, Kocasinan ve Kayseri merkezdeki her taşıma aynı şartlarda ilerlemediği için operasyonu ilçe ve bina yapısına göre planlarız.</p>
+          <p style="font-size:18px;line-height:1.7;">Evden eve nakliyat sürecinde kolilerin oda bazlı ayrılması, mobilyaların koruyucu şekilde paketlenmesi, beyaz eşyaların güvenli taşınması ve yeni adreste teslim sırasının bilinmesi zaman kazandırır. Kayseri nakliyat hizmetlerinde amacımız yalnızca araç göndermek değil, taşınma gününü daha kontrollü ve anlaşılır bir plana dönüştürmektir.</p>
+          <p style="font-size:18px;line-height:1.7;">Kayseri çıkışlı şehirlerarası nakliyat taleplerinde de yükleme saati, yol planı, teslim penceresi ve iletişim akışı önceden konuşulur. Böylece şehir içi ev taşıma, asansörlü taşıma, ofis taşıma ve uzun yol nakliyat işlerinde müşteri ne zaman ne yapılacağını daha net görür.</p>
+          <p style="font-size:18px;line-height:1.7;">Taşınma öncesinde keşif bilgisi, oda sayısı, eşya listesi, paketleme kapsamı ve montaj ihtiyacı netleştiğinde hem fiyat hem de hizmet kapsamı daha anlaşılır olur. Kayseri ev taşıma taleplerinde özellikle apartman giriş saati, site yönetimi kuralları ve araç park mesafesi gibi detayları önceden öğrenmek, taşıma günündeki beklemeleri azaltır.</p>
+          <p style="font-size:18px;line-height:1.7;">AZR Evden Eve Nakliyat; evden eve taşımacılık, asansörlü nakliyat, ofis taşıma, parça eşya taşıma, paketleme ve şehirlerarası nakliyat hizmetlerinde aynı iletişim düzenini kullanır. Müşteri için önemli olan şey, aradığı nakliyat firmasının yalnızca hızlı gelmesi değil, eşyayı doğru sırayla alması, güvenli şekilde taşıması ve yeni adreste düzenli teslim etmesidir.</p>`;
   const links = fallbackLinks
     .map((link) => `<a href="${link.href}" title="${escapeHtml(link.title)}" style="font-size:18px;line-height:1.7;">${link.label}</a>`)
     .join("\n          ");
@@ -70,6 +79,7 @@ function buildStaticFallback(meta) {
           <p style="font-size:18px;line-height:1.7;">${description}</p>
           <h2 style="font-size:28px;line-height:1.25;">${escapeHtml(sectionTitle)}</h2>
           <p style="font-size:18px;line-height:1.7;">${escapeHtml(sectionCopy)}</p>
+${guideMarkup}
           <nav aria-label="Öne çıkan sayfalar" style="font-size:18px;line-height:1.7;">
           ${links}
           </nav>

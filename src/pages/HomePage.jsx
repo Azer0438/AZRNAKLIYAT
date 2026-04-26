@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import {
   ConversionSection,
   FaqSection,
+  KayseriMovingGuideSection,
   LocalSeoSection,
   ProcessSection,
   ServiceAreaSection,
@@ -48,6 +49,7 @@ export default function HomePage({
   trustItems,
   trustBadges,
   conversionHighlights,
+  kayseriMovingGuide,
   localSeoBlocks,
   serviceAreaGroups,
   footerServiceAreas,
@@ -79,6 +81,7 @@ export default function HomePage({
       <TrustStrip items={trustItems} />
       <ConversionSection highlights={conversionHighlights} />
       <ServicesSection services={services} />
+      <KayseriMovingGuideSection guide={kayseriMovingGuide} />
       <LocalSeoSection blocks={localSeoBlocks} badges={trustBadges} />
       <ProcessSection steps={processSteps} />
       <WhyUsSection cards={whyUsCards} />

@@ -728,6 +728,29 @@ textarea {
   padding: 28px;
 }
 
+.guide-layout {
+  display: grid;
+  gap: 32px;
+}
+
+.guide-intro .section-title {
+  max-width: 14ch;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.guide-grid .detail-card {
+  padding: 28px;
+}
+
+.guide-grid .detail-card p {
+  margin-top: 12px;
+}
+
 .feature-stack,
 .faq-list,
 .contact-list {
@@ -1372,6 +1395,7 @@ textarea {
 
   .preview-grid,
   .blog-grid,
+  .guide-grid,
   .service-list-grid,
   .gallery-grid,
   .detail-layout,

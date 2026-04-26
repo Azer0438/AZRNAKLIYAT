@@ -7,6 +7,7 @@ import {
   featuredCitySeoPages,
   featuredSeoPages,
   featuredServices,
+  kayseriMovingGuide,
   localSeoBlocks,
   processSteps,
   serviceAreaGroups,
@@ -24,6 +25,7 @@ export default function HomeRoute({ onHeroSubmit, onDetailSubmit }) {
       trustItems={trustItems}
       trustBadges={trustBadges}
       conversionHighlights={conversionHighlights}
+      kayseriMovingGuide={kayseriMovingGuide}
       localSeoBlocks={localSeoBlocks}
       serviceAreaGroups={serviceAreaGroups}
       footerServiceAreas={footerServiceAreas}

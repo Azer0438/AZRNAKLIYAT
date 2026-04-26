@@ -152,6 +152,28 @@ export function LocalSeoSection({ blocks, badges }) {
   );
 }
 
+export function KayseriMovingGuideSection({ guide }) {
+  return (
+    <section className="section-block">
+      <div className="section-shell guide-layout">
+        <div className="guide-intro reveal">
+          <p className="eyebrow">{guide.eyebrow}</p>
+          <h2 className="section-title">{guide.title}</h2>
+          <p className="section-text">{guide.intro}</p>
+        </div>
+        <div className="guide-grid">
+          {guide.blocks.map((item) => (
+            <article key={item.title} className="detail-card reveal">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ServiceAreaSection({ groups }) {
   return (
     <section className="section-block section-soft">
