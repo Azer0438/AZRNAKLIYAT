@@ -27,15 +27,21 @@ function ensureMeta(selector, attribute, value) {
   return element;
 }
 
-function ensureCanonical(url) {
-  let element = document.head.querySelector('link[rel="canonical"]');
+function ensureLink(selector, attributes) {
+  let element = document.head.querySelector(selector);
   if (!element) {
     element = document.createElement("link");
-    element.setAttribute("rel", "canonical");
     document.head.appendChild(element);
   }
-  element.setAttribute("href", url);
+
+  Object.entries(attributes).forEach(([key, value]) => {
+    element.setAttribute(key, value);
+  });
   return element;
+}
+
+function ensureCanonical(url) {
+  return ensureLink('link[rel="canonical"]', { rel: "canonical", href: url });
 }
 
 function ensureOrRemoveRobots(content) {
@@ -94,12 +100,22 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
     ensureMeta('meta[name="description"]', "content", description);
     ensureMeta('meta[name="author"]', "content", siteMeta.brandName);
     ensureMeta('meta[name="publisher"]', "content", siteMeta.brandName);
+    ensureMeta('meta[name="keywords"]', "content", siteMeta.seoKeywords);
+    ensureMeta('meta[name="language"]', "content", "Turkish");
+    ensureMeta('meta[http-equiv="content-language"]', "content", siteMeta.language);
+    ensureMeta('meta[name="geo.region"]', "content", siteMeta.geoRegion);
+    ensureMeta('meta[name="geo.placename"]', "content", siteMeta.geoPlacename);
+    ensureMeta('meta[name="geo.position"]', "content", siteMeta.geoPosition);
+    ensureMeta('meta[name="ICBM"]', "content", siteMeta.geoPosition.replace(";", ", "));
 
     ensureCanonical(canonicalUrl);
+    ensureLink('link[rel="alternate"][hreflang="tr-TR"]', { rel: "alternate", hreflang: "tr-TR", href: canonicalUrl });
+    ensureLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: canonicalUrl });
     ensureOrRemoveRobots(robotsContent);
     ensureMeta('meta[property="og:title"]', "content", title);
     ensureMeta('meta[property="og:description"]', "content", description);
     ensureMeta('meta[property="og:url"]', "content", canonicalUrl);
+    ensureMeta('meta[property="og:locale"]', "content", siteMeta.locale);
     ensureMeta('meta[name="twitter:title"]', "content", title);
     ensureMeta('meta[name="twitter:description"]', "content", description);
     ensureMeta('meta[name="twitter:card"]', "content", "summary_large_image");

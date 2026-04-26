@@ -19,9 +19,16 @@ export const contactMeta = {
 
 export const siteMeta = {
   brandName: "AZR Evden Eve Nakliyat",
-  siteUrl: "https://azrevdenevenakliyat.com.tr",
+  siteUrl: "https://www.azrevdenevenakliyat.com.tr",
   logoPath: "/images/azr-logo.webp",
   defaultSocialImagePath: "/images/azr-og-image.png",
+  locale: "tr_TR",
+  language: "tr-TR",
+  geoRegion: "TR-38",
+  geoPlacename: "Kayseri",
+  geoPosition: "38.7205;35.4826",
+  seoKeywords:
+    "Kayseri evden eve nakliyat, Kayseri nakliyat, ev taşıma Kayseri, asansörlü nakliyat Kayseri, şehirlerarası nakliyat, ofis taşıma, eşya depolama, AZR Evden Eve Nakliyat",
   contentUpdatedAt: "2026-04-23"
 };
 
