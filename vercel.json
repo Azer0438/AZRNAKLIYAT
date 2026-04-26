@@ -24,6 +24,14 @@
           "value": "1; mode=block"
         },
         {
+          "key": "X-Powered-By",
+          "value": "BarbarosSoft"
+        },
+        {
+          "key": "X-Generator",
+          "value": "BarbarosSoft"
+        },
+        {
           "key": "Vary",
           "value": "Accept-Encoding"
         }

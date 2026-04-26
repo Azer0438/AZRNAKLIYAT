@@ -20,11 +20,11 @@ const blogCoverImages = [
 ];
 
 const fallbackLinks = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/hizmetler", label: "Hizmetler" },
-  { href: "/bolgeler", label: "Hizmet Bölgeleri" },
-  { href: "/sehirler", label: "Şehirlerarası Nakliyat" },
-  { href: "/blog", label: "Blog" }
+  { href: "/", label: "Ana Sayfa", title: "AZR Evden Eve Nakliyat ana sayfası" },
+  { href: "/hizmetler", label: "Hizmetler", title: "Kayseri nakliyat hizmetlerini incele" },
+  { href: "/bolgeler", label: "Hizmet Bölgeleri", title: "Kayseri hizmet bölgelerini incele" },
+  { href: "/sehirler", label: "Şehirlerarası Nakliyat", title: "Şehirlerarası nakliyat rotalarını incele" },
+  { href: "/blog", label: "Blog", title: "Nakliyat rehber yazılarını incele" }
 ];
 
 function escapeHtml(value = "") {
@@ -59,16 +59,18 @@ function buildStaticFallback(meta) {
   const sectionCopy = meta.noIndex
     ? "Aradığınız sayfa taşınmış veya kaldırılmış olabilir. Ana sayfa, hizmetler ve iletişim bağlantıları üzerinden doğru sayfaya ulaşabilirsiniz."
     : "Kayseri evden eve nakliyat, asansörlü nakliyat, şehirlerarası nakliyat, ofis taşıma, paketleme ve eşya depolama süreçlerinde planlı ve iletişimi güçlü bir taşıma akışı sunuyoruz.";
-  const links = fallbackLinks.map((link) => `<a href="${link.href}">${link.label}</a>`).join("\n          ");
+  const links = fallbackLinks
+    .map((link) => `<a href="${link.href}" title="${escapeHtml(link.title)}" style="font-size:18px;line-height:1.7;">${link.label}</a>`)
+    .join("\n          ");
 
-  return `      <main class="seo-fallback" aria-label="${escapeHtml(siteMeta.brandName)}">
+  return `      <main class="seo-fallback" aria-label="${escapeHtml(siteMeta.brandName)}" style="font-size:18px;line-height:1.7;">
         <section>
-          <p>AZR Evden Eve Nakliyat</p>
-          <h1>${title}</h1>
-          <p>${description}</p>
-          <h2>${escapeHtml(sectionTitle)}</h2>
-          <p>${escapeHtml(sectionCopy)}</p>
-          <nav aria-label="Öne çıkan sayfalar">
+          <p style="font-size:18px;line-height:1.7;">AZR Evden Eve Nakliyat</p>
+          <h1 style="font-size:42px;line-height:1.12;">${title}</h1>
+          <p style="font-size:18px;line-height:1.7;">${description}</p>
+          <h2 style="font-size:28px;line-height:1.25;">${escapeHtml(sectionTitle)}</h2>
+          <p style="font-size:18px;line-height:1.7;">${escapeHtml(sectionCopy)}</p>
+          <nav aria-label="Öne çıkan sayfalar" style="font-size:18px;line-height:1.7;">
           ${links}
           </nav>
         </section>

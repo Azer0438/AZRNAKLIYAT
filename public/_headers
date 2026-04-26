@@ -4,6 +4,8 @@
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
+  X-Powered-By: BarbarosSoft
+  X-Generator: BarbarosSoft
   Vary: Accept-Encoding
 
 /assets/*
