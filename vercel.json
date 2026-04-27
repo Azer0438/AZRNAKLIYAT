@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "azrevdenevenakliyat.com.tr"
+        }
+      ],
+      "destination": "https://www.azrevdenevenakliyat.com.tr/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
