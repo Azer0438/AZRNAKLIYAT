@@ -92,36 +92,38 @@ export default function Seo({ title, description, path = "/", image, jsonLd, noI
       previousOgImage === resolvedImage &&
       previousTwitterImage === resolvedImage;
 
-    if (headAlreadyCurrent) {
-      return undefined;
+    document.head.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
+      script.remove();
+    });
+
+    if (!headAlreadyCurrent) {
+      document.title = title;
+      ensureMeta('meta[name="description"]', "content", description);
+      ensureMeta('meta[name="author"]', "content", siteMeta.brandName);
+      ensureMeta('meta[name="publisher"]', "content", siteMeta.brandName);
+      ensureMeta('meta[name="keywords"]', "content", siteMeta.seoKeywords);
+      ensureMeta('meta[name="language"]', "content", "Turkish");
+      ensureMeta('meta[http-equiv="content-language"]', "content", siteMeta.language);
+      ensureMeta('meta[name="geo.region"]', "content", siteMeta.geoRegion);
+      ensureMeta('meta[name="geo.placename"]', "content", siteMeta.geoPlacename);
+      ensureMeta('meta[name="geo.position"]', "content", siteMeta.geoPosition);
+      ensureMeta('meta[name="ICBM"]', "content", siteMeta.geoPosition.replace(";", ", "));
+
+      ensureCanonical(canonicalUrl);
+      ensureLink('link[rel="alternate"][hreflang="tr-TR"]', { rel: "alternate", hreflang: "tr-TR", href: canonicalUrl });
+      ensureLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: canonicalUrl });
+      ensureOrRemoveRobots(robotsContent);
+      ensureMeta('meta[property="og:title"]', "content", title);
+      ensureMeta('meta[property="og:description"]', "content", description);
+      ensureMeta('meta[property="og:url"]', "content", canonicalUrl);
+      ensureMeta('meta[property="og:locale"]', "content", siteMeta.locale);
+      ensureMeta('meta[name="twitter:title"]', "content", title);
+      ensureMeta('meta[name="twitter:description"]', "content", description);
+      ensureMeta('meta[name="twitter:card"]', "content", "summary_large_image");
+
+      ensureMeta('meta[property="og:image"]', "content", resolvedImage);
+      ensureMeta('meta[name="twitter:image"]', "content", resolvedImage);
     }
-
-    document.title = title;
-    ensureMeta('meta[name="description"]', "content", description);
-    ensureMeta('meta[name="author"]', "content", siteMeta.brandName);
-    ensureMeta('meta[name="publisher"]', "content", siteMeta.brandName);
-    ensureMeta('meta[name="keywords"]', "content", siteMeta.seoKeywords);
-    ensureMeta('meta[name="language"]', "content", "Turkish");
-    ensureMeta('meta[http-equiv="content-language"]', "content", siteMeta.language);
-    ensureMeta('meta[name="geo.region"]', "content", siteMeta.geoRegion);
-    ensureMeta('meta[name="geo.placename"]', "content", siteMeta.geoPlacename);
-    ensureMeta('meta[name="geo.position"]', "content", siteMeta.geoPosition);
-    ensureMeta('meta[name="ICBM"]', "content", siteMeta.geoPosition.replace(";", ", "));
-
-    ensureCanonical(canonicalUrl);
-    ensureLink('link[rel="alternate"][hreflang="tr-TR"]', { rel: "alternate", hreflang: "tr-TR", href: canonicalUrl });
-    ensureLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: canonicalUrl });
-    ensureOrRemoveRobots(robotsContent);
-    ensureMeta('meta[property="og:title"]', "content", title);
-    ensureMeta('meta[property="og:description"]', "content", description);
-    ensureMeta('meta[property="og:url"]', "content", canonicalUrl);
-    ensureMeta('meta[property="og:locale"]', "content", siteMeta.locale);
-    ensureMeta('meta[name="twitter:title"]', "content", title);
-    ensureMeta('meta[name="twitter:description"]', "content", description);
-    ensureMeta('meta[name="twitter:card"]', "content", "summary_large_image");
-
-    ensureMeta('meta[property="og:image"]', "content", resolvedImage);
-    ensureMeta('meta[name="twitter:image"]', "content", resolvedImage);
 
     if (jsonLdText) {
       structuredDataScript = document.createElement("script");

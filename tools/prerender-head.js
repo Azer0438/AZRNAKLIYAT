@@ -285,8 +285,9 @@ const routes = [
         post,
         path: `/blog/${post.slug}`,
         image: blogCoverImages[index % blogCoverImages.length]
-      })
-    ]
+      }),
+      post.faqs?.length ? createFaqSchema(post.faqs) : null
+    ].filter(Boolean)
   })),
   ...enrichedSeoPages.map((page) => ({
     path: `/bolgeler/${page.slug}`,
