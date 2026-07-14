@@ -116,7 +116,7 @@ export function createBlogPostingSchema({ post, path, image }) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    description: post.excerpt,
+    description: post.metaDescription || post.excerpt,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     author: {

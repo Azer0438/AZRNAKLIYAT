@@ -222,6 +222,12 @@ export const faqs = [
 
 export const featuredBlogPosts = [
   {
+    slug: "yeni-eve-tasinmadan-once-kombi-dogalgaz-kontrolu",
+    title: "Yeni Eve Taşınmadan Önce Kombi ve Doğalgaz Kontrolü",
+    category: "Taşınma Rehberi",
+    excerpt: "Yeni eve taşınmadan önce kombi, petekler, doğalgaz tesisatı ve abonelik işlemlerinde kontrol edilmesi gerekenleri öğrenin."
+  },
+  {
     slug: "tasinma-oncesi-kontrol-listesi",
     title: "Taşınmadan 72 Saat Önce Tamamlanması Gerekenler",
     category: "Planlama",
@@ -232,12 +238,6 @@ export const featuredBlogPosts = [
     title: "Asansörlü Taşıma Hangi Binalarda Gerçekten Avantaj Sağlar?",
     category: "Hizmet Rehberi",
     excerpt: "Yüksek kat ve zor erişimli binalarda asansörlü sistemin ne zaman gerçekten fark yarattığını sade şekilde anlattık."
-  },
-  {
-    slug: "sehirlerarasi-nakliyatta-en-sik-hatalar",
-    title: "Şehirlerarası Taşınmada Zaman Kaybettiren 3 Yaygın Hata",
-    category: "Uzman Görüşü",
-    excerpt: "Uzun yol operasyonlarında gecikmeye ve düzensizliğe neden olan üç temel hatayı örneklerle özetledik."
   }
 ];
 

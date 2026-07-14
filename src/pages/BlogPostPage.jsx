@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import ResponsiveImage from "../components/ResponsiveImage";
@@ -50,6 +51,54 @@ const relatedContentRules = [
   }
 ];
 
+function renderInlineContent(parts, keyPrefix) {
+  return parts.map((part, index) => {
+    if (typeof part === "string") {
+      return <Fragment key={`${keyPrefix}-text-${index}`}>{part}</Fragment>;
+    }
+
+    if (part.type === "externalLink") {
+      return (
+        <a key={`${keyPrefix}-link-${index}`} href={part.href} target="_blank" rel="noopener noreferrer">
+          {part.text}
+        </a>
+      );
+    }
+
+    return null;
+  });
+}
+
+function renderSectionContent(section, sectionIndex) {
+  if (!section.content) {
+    return section.text ? <p>{section.text}</p> : null;
+  }
+
+  return section.content.map((block, blockIndex) => {
+    const keyPrefix = `section-${sectionIndex}-block-${blockIndex}`;
+
+    if (block.type === "list") {
+      return (
+        <ul key={keyPrefix} className="article-list">
+          {block.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    if (block.type === "paragraph") {
+      return (
+        <p key={keyPrefix}>
+          {block.parts ? renderInlineContent(block.parts, keyPrefix) : block.text}
+        </p>
+      );
+    }
+
+    return null;
+  });
+}
+
 function getRelatedEntries(post, services, seoPages, citySeoPages) {
   const rule = relatedContentRules.find((item) => item.match.test(post.slug)) || {
     serviceSlug: "evden-eve-tasimacilik",
@@ -80,8 +129,8 @@ export default function BlogPostPage({ blogPosts, services, seoPages, citySeoPag
   return (
     <>
       <Seo
-        title={`${post.title} | AZR Evden Eve Nakliyat Blog`}
-        description={post.excerpt}
+        title={post.seoTitle || `${post.title} | AZR Evden Eve Nakliyat Blog`}
+        description={post.metaDescription || post.excerpt}
         path={`/blog/${post.slug}`}
         image={coverImage}
         jsonLd={[
@@ -109,10 +158,10 @@ export default function BlogPostPage({ blogPosts, services, seoPages, citySeoPag
             <span>{post.date}</span>
             <span>{post.readTime}</span>
           </div>
-          {post.sections.map((section) => (
-            <article key={section.heading} className="detail-card reveal">
-              <h2>{section.heading}</h2>
-              <p>{section.text}</p>
+          {post.sections.map((section, index) => (
+            <article key={section.heading || `${post.slug}-${index}`} className="detail-card reveal">
+              {section.heading ? <h2>{section.heading}</h2> : null}
+              {renderSectionContent(section, index)}
             </article>
           ))}
           {post.faqs?.length ? (

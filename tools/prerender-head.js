@@ -271,8 +271,8 @@ const routes = [
   })),
   ...blogPosts.map((post, index) => ({
     path: `/blog/${post.slug}`,
-    title: `${post.title} | AZR Evden Eve Nakliyat Blog`,
-    description: post.excerpt,
+    title: post.seoTitle || `${post.title} | AZR Evden Eve Nakliyat Blog`,
+    description: post.metaDescription || post.excerpt,
     image: blogCoverImages[index % blogCoverImages.length],
     ogType: "article",
     jsonLd: [

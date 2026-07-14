@@ -4,6 +4,261 @@ const blogUpdatedAt = siteMeta.contentUpdatedAt;
 
 const baseBlogPosts = [
   {
+    slug: "yeni-eve-tasinmadan-once-kombi-dogalgaz-kontrolu",
+    title: "Yeni Eve Taşınmadan Önce Kombi ve Doğalgaz Kontrolü",
+    seoTitle: "Taşınmadan Önce Kombi ve Doğalgaz Kontrolü | AZR Nakliyat",
+    metaDescription:
+      "Yeni eve taşınmadan önce kombi, petekler, doğalgaz tesisatı ve abonelik işlemlerinde kontrol edilmesi gereken noktaları öğrenin.",
+    primaryKeyword: "taşınmadan önce kombi kontrolü",
+    secondaryKeywords: [
+      "yeni ev doğalgaz kontrolü",
+      "taşınırken kombi kontrolü",
+      "doğalgaz tesisatı kontrolü"
+    ],
+    category: "Taşınma Rehberi",
+    cover: {
+      label: "Doğalgaz Kontrolü",
+      gradient: "linear-gradient(135deg, #17343a, #0f7b78 58%, #d79a4a)"
+    },
+    date: "14 Temmuz 2026",
+    publishedAt: "2026-07-14",
+    updatedAt: "2026-07-14",
+    readTime: "8 dk",
+    excerpt:
+      "Yeni eve taşınmadan önce kombi, petekler, doğalgaz tesisatı ve abonelik işlemlerinde kontrol edilmesi gereken noktaları öğrenin.",
+    includeAutoSeo: false,
+    sections: [
+      {
+        heading: "Taşınma öncesi kombi ve doğalgaz neden kontrol edilmeli?",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Yeni bir eve taşınmadan önce yalnızca eşyaların paketlenmesi ve nakliye planının hazırlanması yeterli değildir. Yeni konutta kullanılacak elektrik, su, internet ve doğalgaz sistemlerinin de taşınma tarihinden önce kontrol edilmesi gerekir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Özellikle kış aylarında gerçekleştirilen taşınmalarda kombinin çalışmaması veya doğalgaz aboneliğinin henüz açılmamış olması ciddi mağduriyet oluşturabilir. Bu nedenle kombi ve doğalgaz kontrollerini taşınma gününe bırakmamak önemlidir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Aşağıdaki kontrol listesi, yeni evinizde doğalgaz ve ısınma konusunda sürpriz yaşamamanıza yardımcı olabilir."
+          }
+        ]
+      },
+      {
+        heading: "1. Konutun doğalgaz abonelik durumunu öğrenin",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Yeni taşınacağınız evde doğalgaz tesisatı bulunması, aboneliğin kullanıma açık olduğu anlamına gelmez. Önceki kiracı veya ev sahibi mevcut aboneliği kapatmış olabilir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Taşınma öncesinde abonelik durumunu öğrenerek gerekli başvuru, evrak ve randevu işlemlerini tamamlayın. İşlemleri son güne bırakmak, yeni evde sıcak su ve ısınma hizmetinden birkaç gün yararlanamamanıza neden olabilir."
+          }
+        ]
+      },
+      {
+        heading: "2. Kombiyi çalıştırarak kontrol edin",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Mümkünse taşınmadan önce kombiyi çalıştırın. Cihazın ekranında hata kodu bulunup bulunmadığını, sıcak suyun devreye girip girmediğini ve peteklerin ısınıp ısınmadığını kontrol edin."
+          },
+          {
+            type: "paragraph",
+            text: "Kombide aşağıdaki belirtilerden biri bulunuyorsa teknik inceleme gerekebilir:"
+          },
+          {
+            type: "list",
+            items: [
+              "Olağan dışı ses çıkarması",
+              "Su basıncının sürekli düşmesi",
+              "Sıcak suyun düzensiz gelmesi",
+              "Peteklerin yeterince ısınmaması",
+              "Cihaz ekranında hata kodu görünmesi",
+              "Kombinin sık sık kapanması"
+            ]
+          },
+          {
+            type: "paragraph",
+            text:
+              "Bu kontrollerin taşınmadan önce yapılması, mobilyalar yerleştirildikten sonra oluşabilecek ek iş yükünü azaltır."
+          }
+        ]
+      },
+      {
+        heading: "3. Doğalgaz tesisatında değişiklik olup olmadığını sorun",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Önceki kullanıcı tarafından kombinin, ocağın veya doğalgaz borularının yerinde değişiklik yapılmış olabilir. Yapılan değişikliklerin mevcut tesisata ve projeye uygun olması önemlidir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Özellikle mutfak yenilemesi, kombi yeri değişikliği, balkon kapatma veya yeni cihaz bağlantısı gibi işlemler yapıldıysa tesisatın uzmanlar tarafından incelenmesi gerekebilir."
+          },
+          {
+            type: "paragraph",
+            parts: [
+              "Yeni evinizde tesisatın durumu, bağlantılar veya proje uygunluğu konusunda desteğe ihtiyaç duyarsanız ",
+              {
+                type: "externalLink",
+                href: "https://www.dogtekdogalgazmuhendislik.com/hizmetler/dogalgaz-tesisati",
+                text: "Doğtek Doğalgaz Mühendislik'in doğalgaz tesisatı hizmetlerini"
+              },
+              " inceleyebilirsiniz."
+            ]
+          }
+        ]
+      },
+      {
+        heading: "4. Doğalgaz vanalarını ve sayacı kontrol edin",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Ana doğalgaz vanasının, kombi vanasının ve ocak bağlantısının erişilebilir durumda olması gerekir. Nakliye sırasında bu alanların önüne büyük mobilyalar veya açılması zor koliler yerleştirilmemelidir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Doğalgaz sayacının bulunduğu alanı da kontrol edin. Sayaç numarası ve abonelik bilgileri başvuru işlemlerinde gerekli olabilir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Herhangi bir gaz kokusu fark edilmesi durumunda elektrik düğmelerine dokunulmamalı, ateş yakılmamalı ve alan havalandırılarak ilgili acil yardım hattına haber verilmelidir."
+          }
+        ]
+      },
+      {
+        heading: "5. Peteklerin durumunu inceleyin",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Peteklerin yalnızca dış görünüşünü değil, bağlantı noktalarını da kontrol edin. Vanalarda veya bağlantı bölgelerinde su sızıntısı bulunup bulunmadığına bakın."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Kombi çalıştırıldığında bazı petekler sıcak, bazıları soğuk kalıyorsa tesisatta hava veya dolaşım problemi bulunabilir. Uzun süredir kullanılmayan sistemlerde bakım veya temizlik ihtiyacı oluşabilir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Peteklerin önüne yerleştirilecek büyük mobilyalar da ısının odaya yayılmasını zorlaştırabilir. Mobilya yerleşim planını hazırlarken peteklerin önünü mümkün olduğunca açık bırakın."
+          }
+        ]
+      },
+      {
+        heading: "6. Kombinin taşınma sırasında korunmasını sağlayın",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Kombi evde sabit kalacak olsa bile nakliye sırasında zarar görebilir. Büyük eşyaların taşınması sırasında kombinin gövdesine, alt bağlantılarına veya borularına çarpılmaması gerekir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Nakliye ekibine kombinin ve tesisat borularının bulunduğu alanı önceden gösterin. Özellikle dar koridorlarda ve balkon geçişlerinde büyük eşyaların nasıl taşınacağını birlikte planlayın."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Kombinin altına veya yakınına ağır koliler yerleştirmeyin. Cihazın bakım ve kontrol için erişilebilir durumda kalmasını sağlayın."
+          }
+        ]
+      },
+      {
+        heading: "7. Ocak bağlantısını taşınmadan önce planlayın",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Eski evden sökülen doğalgazlı ocak, yeni konuta doğrudan bağlanmamalıdır. Yeni evdeki bağlantının ve kullanılan ekipmanın uygunluğunun kontrol edilmesi gerekir."
+          },
+          {
+            type: "paragraph",
+            text:
+              "Ocak bağlantısının taşınma telaşı içinde gelişigüzel yapılması güvenlik riski oluşturabilir. Bağlantı işlemini gerekli teknik bilgiye sahip kişilerden destek alarak gerçekleştirin."
+          }
+        ]
+      },
+      {
+        heading: "8. Ev sahibinden bakım ve proje bilgilerini isteyin",
+        content: [
+          {
+            type: "paragraph",
+            text: "Kiracı olarak taşınıyorsanız ev sahibine şu soruları yöneltebilirsiniz:"
+          },
+          {
+            type: "list",
+            items: [
+              "Kombinin son bakımı ne zaman yapıldı?",
+              "Tesisatta yakın zamanda değişiklik yapıldı mı?",
+              "Kombi veya ocağın yeri değiştirildi mi?",
+              "Doğalgaz aboneliği kapatıldı mı?",
+              "Daha önce gaz açma veya proje sorunu yaşandı mı?",
+              "Kombinin garanti veya servis belgeleri mevcut mu?"
+            ]
+          },
+          {
+            type: "paragraph",
+            text:
+              "Bu bilgiler, taşınma öncesinde hangi kontrollerin gerekli olduğunu belirlemenizi kolaylaştırır."
+          }
+        ]
+      },
+      {
+        heading: "Taşınmadan önce son kontrol listesi",
+        content: [
+          {
+            type: "paragraph",
+            text: "Taşınma tarihinden birkaç gün önce aşağıdaki maddeleri tamamlayın:"
+          },
+          {
+            type: "list",
+            items: [
+              "Doğalgaz abonelik durumunu öğrenin.",
+              "Kombinin sıcak su ve ısıtma özelliklerini deneyin.",
+              "Peteklerde sızıntı veya ısınma problemi olup olmadığını kontrol edin.",
+              "Doğalgaz sayacı ve vanaların yerini belirleyin.",
+              "Tesisatta değişiklik yapılıp yapılmadığını öğrenin.",
+              "Kombi ve tesisat çevresini boş bırakın.",
+              "Gerekli teknik kontrol ve randevuları önceden planlayın."
+            ]
+          }
+        ]
+      },
+      {
+        heading: "Planlı taşınma, sorunsuz yerleşme",
+        content: [
+          {
+            type: "paragraph",
+            text:
+              "Yeni eve taşınma sürecinde nakliye ile abonelik ve teknik kontrollerin birlikte planlanması zaman kazandırır. Eşyaların yeni adrese ulaştırıldığı gün kombinin çalışır, doğalgaz aboneliğinin açık ve tesisatın kullanıma uygun olması yerleşme sürecini kolaylaştırır."
+          },
+          {
+            type: "paragraph",
+            text:
+              "AZR Evden Eve Nakliyat ile taşıma planı oluştururken bina koşulları, kat bilgisi, büyük eşyalar ve kombi çevresindeki dar geçişler hakkında önceden bilgi paylaşılması operasyonun daha güvenli ilerlemesine yardımcı olur."
+          }
+        ]
+      }
+    ]
+  },
+  {
     slug: "tasinma-oncesi-kontrol-listesi",
     title: "Taşınmadan 72 Saat Önce Tamamlanması Gerekenler",
     category: "Planlama",
@@ -673,10 +928,14 @@ function createBlogFaqs(post) {
   ];
 }
 
-export const blogPosts = baseBlogPosts.map((post) => ({
-  ...post,
-  title: seoTitleOverrides[post.slug] || post.title,
-  readTime: post.readTime === "3 dk" || post.readTime === "4 dk" ? "6 dk" : post.readTime,
-  sections: [...post.sections, ...createBlogSeoSections(post)],
-  faqs: post.faqs || createBlogFaqs(post)
-}));
+export const blogPosts = baseBlogPosts.map((post) => {
+  const shouldIncludeAutoSeo = post.includeAutoSeo !== false;
+
+  return {
+    ...post,
+    title: seoTitleOverrides[post.slug] || post.title,
+    readTime: post.readTime === "3 dk" || post.readTime === "4 dk" ? "6 dk" : post.readTime,
+    sections: shouldIncludeAutoSeo ? [...post.sections, ...createBlogSeoSections(post)] : post.sections,
+    faqs: post.faqs || (shouldIncludeAutoSeo ? createBlogFaqs(post) : undefined)
+  };
+});
